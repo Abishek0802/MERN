@@ -1,0 +1,32 @@
+
+//installing package.json 
+
+npm init -y
+
+
+-------------------------
+
+//instaling npm
+
+
+npm i express
+
+express 4.18.2
+
+4    Major version
+18   Minor  version
+2     Patch  version
+
+--------------------------
+
+
+-------------------------
+
+  npm i date-fns
+
+date-fns: 3.0.6 
+
+ "^3.0.6" =>(^) allow to update minor version and patch
+ "3.0.6"  => specific version to run
+ "~3.0.6" => (~)  update patch version only
+ "*3.0.6" => (*)  update everything(note safe)
