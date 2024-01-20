@@ -2,7 +2,21 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3500;
-//midleware
+// Custom MiddleWare
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path}`);
+  next();
+});
+
+//BuildIn MiddleWare
+
+//1 . Form Submition data
+app.use(express.urlencoded({ extended: false }));
+//2 . json data
+app.use(express.json());
+//3 . displaying all static files
+app.use(express.static(path.join(__dirname, "./public")));
 
 app.get("^/$|index(.html)?", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "index.html"));
