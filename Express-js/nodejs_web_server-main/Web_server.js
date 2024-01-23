@@ -5,9 +5,11 @@ const PORT = process.env.PORT || 3500;
 //importing LogEvents
 
 const LogEvents = require("./MiddleWare/logEvents");
+const logEvents = require("./MiddleWare/logEvents");
 // Custom MiddleWare
 
 app.use((req, res, next) => {
+  logEvents
   console.log(`${req.method} ${req.path}`);
   next();
 });
