@@ -1,0 +1,218 @@
+* {
+  padding: 10px;
+}
+#outer {
+  background-color: rgb(212, 97, 97);
+  border-radius: 10px;
+}
+
+.Header {
+  background-color: lightgray;
+  padding: 20px;
+}
+.Product {
+  background-color: lightblue;
+  height: fit-content;
+  width: fit-content;
+  transition: 2s;
+  transform: rotateY(360deg);
+}
+.Product_List {
+  display: flex;
+  flex-direction: row;
+  row-gap: 10px;
+  column-gap: 20px;
+}
+.Product > img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+.Button {
+  background-color: black;
+  color: aliceblue;
+  border-radius: 10px;
+}
+.Button2 {
+  color: aliceblue;
+  background-color: black;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.UserInput {
+  width: fit-content;
+  height: fit-content;
+  background-color: lightcoral;
+}
+.DisplayInfo {
+  background-color: lightgrey;
+  width: fit-content;
+  padding: 10px;
+  height: fit-content;
+  align-items: center;
+}
+.countries-container {
+  display: flex;
+}
+
+.country {
+  margin: 10px; /* Optional: Add margin between each country div */
+  padding: 10px;
+  background-color: #eb5160;
+  border-radius: 10px; /* Optional: Add a border for better visualization */
+}
+.productDis {
+  width: fit-content;
+  height: fit-content;
+  background-color: #93e5ab;
+  padding: 20px;
+}
+.productDis > img {
+  width: 200px;
+  height: 200px;
+}
+.APIdata {
+  width: fit-content;
+  height: fit-content;
+  background-color: #9c72c1;
+  padding: 20px;
+}
+.APIdata > img {
+  width: 200px;
+  height: 200px;
+}
+.Displaydata {
+  background-color: #9c72c1;
+  width: fit-content;
+  height: fit-content;
+}
+/* //Dark mode */
+.Nav {
+  /* background-color: antiquewhite; */
+  border-radius: 10px;
+  padding: 10px; /* Add padding for better spacing on smaller screens */
+}
+
+.NavList {
+  display: flex;
+  flex-direction: row-reverse;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.NavList li {
+  margin-right: 20px;
+  text-decoration: none;
+}
+button {
+  border-radius: 10px;
+  border: #9c72c1 solid 2px;
+}
+.div1 {
+  background-color: #93e5ab;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  border-radius: 10px;
+  height: 500px;
+  row-gap: 10px;
+}
+.div1 > div {
+  background-color: #316d42;
+  width: 300px;
+  border-radius: 10px;
+  height: 420px;
+  margin-top: 20px;
+}
+.div2 {
+  background-color: bisque;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+.div2 > h1 {
+  font-size: xx-large;
+}
+.footer {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #93e5ab;
+  margin-top: 5%;
+  border-radius: 10px;
+  justify-content: space-evenly;
+}
+.form {
+  width: fit-content;
+  height: fit-content;
+  background-color: #b39598;
+  border-radius: 10px;
+  position: relative;
+  left: 38%;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  color: black;
+  align-items: center;
+  padding: 20px;
+}
+.form > h1 {
+  text-align: center;
+  font-size: x-large;
+  font-weight: 600;
+}
+.form > button {
+  width: fit-content;
+}
+.form > input {
+  width: 300px;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .NavList {
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+  }
+
+  .NavList li {
+    margin: 5px 0;
+    text-decoration: none;
+    margin-right: 0; /* Reset margin for better spacing in a column layout */
+  }
+  button {
+    border-radius: 10px;
+    border: #9c72c1 solid 2px;
+  }
+  .div1 > div {
+    height: 90px;
+    margin-top: 0px;
+  }
+  .form {
+    width: fit-content;
+    height: fit-content;
+    background-color: #b39598;
+    border-radius: 10px;
+    position: relative;
+    left: 0px;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .form > input {
+    width: 300px;
+  }
+  .form > p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
