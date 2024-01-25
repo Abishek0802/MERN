@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -15,35 +19,39 @@ function Login() {
   };
 
   const handleLogin = () => {
-    // Simple validation
-    const errors = {};
+    // Accumulate errors
+    const errors = [];
 
     // Email validation
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
     if (!email.trim() || !emailRegex.test(email)) {
-      errors.email = "Enter a valid email address";
+      errors.push("Enter a valid email address");
     }
 
     // Password validation (6 characters, at least one uppercase, one lowercase, one special character, and one digit)
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@.]).{6,}$/;
     if (!password.trim() || !passwordRegex.test(password)) {
-      errors.password =
-        "Password must be at least 6 characters and include at least one uppercase letter, one lowercase letter, one digit, and one of the following symbols: @ or .";
+      errors.push(
+        "Password must be at least 6 characters and include at least one uppercase letter, one lowercase letter, one digit, and one of the following symbols: @ or ."
+      );
     }
 
-    if (Object.keys(errors).length === 0) {
+    if (errors.length === 0) {
       // Proceed with login logic
-      console.log("Logging in...", { email, password });
-      alert(`Login successful!\nEmail: ${email}\nPassword: ${password}`);
+      console.log("Logging in...", { name, email, password });
+      alert(
+        `Login successful!\nName: ${name}\nEmail: ${email}\nPassword: ${password}`
+      );
 
       // Redirect to the initial route (replace "/About" with your desired route)
       navigate("/About");
       // Reset the input values to empty strings
+      setName("");
       setEmail("");
       setPassword("");
     } else {
-      // Display validation errors in an alert
-      alert(Object.values(errors).join("\n"));
+      // Display validation errors in a single alert
+      alert(errors.join("\n"));
     }
   };
 
@@ -51,6 +59,13 @@ function Login() {
     <>
       <div className="form animate__animated animate__bounceIn">
         <h1>Welcome Back</h1>
+        <input
+          type="text"
+          placeholder="Name"
+          className="input input-bordered input-info w-full max-w-xs"
+          value={name}
+          onChange={handleNameChange}
+        />
         <input
           type="text"
           placeholder="E-mail"
