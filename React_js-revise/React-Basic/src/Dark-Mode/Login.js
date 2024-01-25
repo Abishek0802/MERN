@@ -31,6 +31,8 @@ function Login() {
     const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
     if (!email.trim() || !emailRegex.test(email)) {
       errors.push("Enter a valid email address");
+
+      setEmail("");
     }
 
     // Password validation (6 characters, at least one uppercase, one lowercase, one special character, and one digit)
@@ -39,6 +41,8 @@ function Login() {
       errors.push(
         "Password must be at least 6 characters and include at least one uppercase letter, one lowercase letter, one digit, and one of the following symbols: @ or ."
       );
+
+      setPassword("");
     }
 
     if (errors.length === 0) {
@@ -49,7 +53,7 @@ function Login() {
       );
 
       // Redirect to the initial route (replace "/About" with your desired route)
-      navigate("/About");
+      navigate("/");
       // Reset the input values to empty strings
       setName("");
       setEmail("");
@@ -83,23 +87,27 @@ function Login() {
       <div className="form animate__animated animate__bounceIn">
         <h1>Welcome Back</h1>
         <input
+          required
           type="text"
           placeholder="Name"
-          className="input input-bordered input-info w-full max-w-xs"
+          className="input input-bordered  w-full max-w-xs"
           value={name}
           onChange={handleNameChange}
         />
         <input
+          required
           type="text"
           placeholder="E-mail"
-          className="input input-bordered input-info w-full max-w-xs"
+          className="input input-bordered  w-full max-w-xs"
           value={email}
           onChange={handleEmailChange}
         />
         <input
+          required
           type="password"
           placeholder="Password"
-          className="input input-bordered input-info w-full max-w-xs"
+          maxLength={12}
+          className="input input-bordered  w-full max-w-xs"
           value={password}
           onChange={handlePasswordChange}
         />

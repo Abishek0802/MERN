@@ -19,18 +19,19 @@ function App() {
   const [name, setName] = useState("Abishek");
   return (
     <>
-      <TheContext.Provider value={name}>
+      {/* <TheContext.Provider value={name}>
         <p>Hi this is first {name}</p>
         <Product />
-      </TheContext.Provider>
+      </TheContext.Provider> */}
       {/* <Form /> */}
 
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dark />}></Route>
+
           <Route path="/About" element={<About />}></Route>
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
 
       {/* <Header />
       <Product_List />
