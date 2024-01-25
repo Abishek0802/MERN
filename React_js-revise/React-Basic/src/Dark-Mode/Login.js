@@ -5,6 +5,11 @@ function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [wholeErr, setwholeErr] = useState("");
+  const [errAnimate, seterrorAnimate] = useState("");
+  const [wholeErrColor, setwholeErrColor] = useState({
+    backgroundColor: "transparent",
+  });
   const navigate = useNavigate();
 
   const handleNameChange = (e) => {
@@ -49,14 +54,32 @@ function Login() {
       setName("");
       setEmail("");
       setPassword("");
+      setwholeErr("");
+      setwholeErrColor((prevCol) => ({
+        backgroundColor:
+          prevCol.backgroundColor === "transparent"
+            ? "transparent"
+            : "transparent",
+      }));
     } else {
       // Display validation errors in a single alert
-      alert(errors.join("\n"));
+      setwholeErr(errors.join("\n"));
+      setwholeErrColor((prevCol) => ({
+        backgroundColor:
+          prevCol.backgroundColor === "transparent"
+            ? " #7d343b"
+            : "transparent",
+      }));
+      seterrorAnimate("animate__animated animate__headShake");
     }
   };
 
   return (
     <>
+      <p style={wholeErrColor} className={errAnimate} id="err">
+        {wholeErr}
+      </p>
+
       <div className="form animate__animated animate__bounceIn">
         <h1>Welcome Back</h1>
         <input
