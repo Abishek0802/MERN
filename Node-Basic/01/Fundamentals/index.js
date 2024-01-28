@@ -10,7 +10,7 @@ const os = require("os");
 
 // writing file
 
-// fs.writeFileSync("./products.txt",'Apple');
+fs.writeFileSync("./products.txt", "Apple");
 
 // async way of reading / writing
 
