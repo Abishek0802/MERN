@@ -10,7 +10,7 @@ const os = require("os");
 
 // writing file
 
-fs.writeFileSync("./products.txt", "Apple");
+// fs.writeFileSync("./products.txt", "Apple");
 
 // async way of reading / writing
 
@@ -23,15 +23,15 @@ fs.writeFileSync("./products.txt", "Apple");
 
 // writing file
 
-// fs.writeFile('./products.txt','Mango',(err)=>{
-//     console.log(err);
-// })
+fs.writeFile("./products.txt", "Mango", (err) => {
+  console.log(err);
+});
 
-// fs.appendFile('./products.txt','\tOrange',(err)=>{
-//     console.log(err);
-// })
+fs.appendFile("./products.txt", "\nOrange", (err) => {
+  console.log(err);
+});
 
-fs.unlinkSync("abc.txt");
+// fs.unlinkSync("abc.txt");
 
 // console.log(os.platform());
 // console.log(os.hostname())
